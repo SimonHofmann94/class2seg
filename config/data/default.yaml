@@ -4,8 +4,8 @@ img_size: 256
 bsdata:
   data_dir: data/BSData/data
   label_dir: data/BSData/label
-  data_dir_val: data/BSData/data      # falls später eigenes Val-Set
-  label_dir_val: data/BSData/label    # falls später eigenes Val-Set
+  train_val_split: 0.8   # 80 % Training, 20 % Validierung
+  test_split:      0.1     # 10 % der Daten exklusiv als Test-Se
 
 severstal:
   img_dir: data/Severstal/train/img

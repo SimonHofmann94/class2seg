@@ -5,3 +5,4 @@ tensorboard
 numpy
 omegaconf
 Pillow
+scikit-learn

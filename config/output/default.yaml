@@ -1,0 +1,3 @@
+attribution_dir: outputs/attributions
+mask_dir:       outputs/masks
+viz_dir:        outputs/visualizations
