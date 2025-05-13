@@ -1,0 +1,12 @@
+# config/data/default.yaml
+img_size: 256
+
+bsdata:
+  data_dir: data/BSData/data
+  label_dir: data/BSData/label
+  data_dir_val: data/BSData/data      # falls später eigenes Val-Set
+  label_dir_val: data/BSData/label    # falls später eigenes Val-Set
+
+severstal:
+  img_dir: data/Severstal/train/img
+  ann_dir: data/Severstal/train/ann

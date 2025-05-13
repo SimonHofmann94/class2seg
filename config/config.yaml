@@ -1,0 +1,6 @@
+# config/config.yaml
+defaults:
+  - data: default
+  - model: default
+  - train: default
+  - augment: default

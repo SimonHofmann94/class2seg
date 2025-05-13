@@ -1,0 +1,32 @@
+# Data
+data/BSData/data
+data/BSData/label
+data/Severstal/test/ann
+data/Severstal/test/img
+data/Severstal/train/ann
+data/Severstal/train/img
+
+# Python
+__pycache__/
+*.py[cod]
+*.so
+
+# Environments
+.env
+venv/
+env/
+
+# IDEs
+.vscode/
+.idea/
+
+# Hydra
+**/.hydra/
+
+# Logs, checkpoints, outputs
+runs/
+checkpoints/
+outputs/
+
+# macOS
+.DS_Store

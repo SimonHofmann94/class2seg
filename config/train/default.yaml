@@ -1,0 +1,16 @@
+# config/train/default.yaml
+seed: 42
+device: cuda           # "cuda" oder "cpu"
+batch_size: 16
+num_workers: 4
+
+optimizer: adam        # möglich: adam, sgd
+lr: 0.001
+momentum: 0.9          # nur relevant für SGD
+
+lr_patience: 3         # ReduceLROnPlateau Geduld
+early_stop_patience: 5 # EarlyStopping Geduld
+max_epochs: 50
+
+tb_log_dir: runs/tensorboard   # TensorBoard-Logs
+ckpt_dir: checkpoints           # Modell-Checkpoints
