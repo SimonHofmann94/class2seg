@@ -27,7 +27,7 @@ class BSDataset(Dataset):
     def __len__(self) -> int:
         return len(self.image_names)
 
-    def __getitem__(self, idx: int) -> Tuple[torch.Tensor, int]:
+    def __getitem__(self, idx: int) -> Tuple[torch.Tensor, int, str]:
         # Bild laden
         img_name = self.image_names[idx]
         img_path = os.path.join(self.data_dir, img_name)
@@ -45,7 +45,8 @@ class BSDataset(Dataset):
         if self.transform:
             image = self.transform(image)
 
-        return image, label
+        base = os.path.splitext(img_name)[0]
+        return image, label, base
 
 
 class SeverstalDataset(Dataset):

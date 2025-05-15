@@ -1,0 +1,14 @@
+# config/xai/default.yaml
+# → erweitert um multi-class, baselines & positives-only
+method: lrp
+target_class: 1               # bleibt für backward compatibility
+target_classes: [0, 1]        # Liste aller Zielklassen (für binary zuerst [0,1])
+max_samples: 20
+
+# Neue Einträge:
+baseline_types:               # welche Baselines DeepLift & DeepLiftShap automatisch durchläuft
+  - zero
+  - gaussian
+  - dataset_mean
+
+positive_only: true           # clamp negative Attributionen auf 0

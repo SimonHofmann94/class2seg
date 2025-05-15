@@ -28,5 +28,8 @@ runs/
 checkpoints/
 outputs/
 
+# Archives
+new/
+
 # macOS
 .DS_Store

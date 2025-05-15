@@ -6,4 +6,5 @@ defaults:
   - model: default
   - train: default
   - augment: default
+  - xai: default
   - output: default

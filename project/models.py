@@ -31,6 +31,18 @@ class ClassifierModel(nn.Module):
             self.avgpool   = nn.Identity()
             self.classifier = nn.Linear(in_features, num_classes)
 
+        elif backbone_name == 'densenet121':
+            backbone = models.densenet121(pretrained=pretrained)
+            # DenseNet hat backbone.features und backbone.classifier
+            in_features = backbone.classifier.in_features
+            # Entferne den alten Classifier
+            backbone.classifier = nn.Identity()
+            self.features = backbone.features
+            # Global Pooling (DenseNet liefert bereits einen 1×1 Feature-Map nach features)
+            self.avgpool = nn.AdaptiveAvgPool2d((1, 1))
+            self.classifier = nn.Linear(in_features, num_classes)
+
+
         else:
             raise ValueError(f"Unbekannter Backbone: {backbone_name}")
 

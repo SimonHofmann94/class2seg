@@ -9,9 +9,9 @@ import torchvision.transforms as transforms
 from omegaconf import DictConfig
 import torch.nn.functional as F
 
-from project.datasets import BSDataset
-from project.models import ClassifierModel
-from project.utils import set_seed, EarlyStopping
+from new.project_old import BSDataset
+from new.project_old import ClassifierModel
+from new.project_old import set_seed, EarlyStopping
 
 
 def get_transforms(cfg: DictConfig):

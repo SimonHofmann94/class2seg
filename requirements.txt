@@ -6,3 +6,5 @@ numpy
 omegaconf
 Pillow
 scikit-learn
+captum
+matplotlib
