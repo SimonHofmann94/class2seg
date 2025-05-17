@@ -7,9 +7,9 @@ from torch.utils.data import DataLoader, random_split
 import torchvision.transforms as transforms
 from sklearn.metrics import precision_recall_fscore_support, roc_auc_score, accuracy_score, confusion_matrix
 
-from new.project_old import BSDataset
-from new.project_old import ClassifierModel
-from new.project_old import set_seed
+from project.datasets import BSDataset
+from project.models import ClassifierModel
+from project.utils import set_seed
 
 
 @hydra.main(config_path="../config", config_name="config")
@@ -73,7 +73,7 @@ def main(cfg: DictConfig):
     # Inferenz auf Test-Set
     y_true, y_pred, y_prob = [], [], []
     with torch.no_grad():
-        for imgs, labels in test_loader:
+        for imgs, labels, _ in test_loader:
             imgs = imgs.to(device)
             outputs = model(imgs)
             probs = F.softmax(outputs, dim=1)

@@ -1,0 +1,32 @@
+# config/postprocessing/default.yaml
+method: threshold       # 'threshold' oder 'gmm'
+
+threshold:
+  method: fixed         # 'fixed' oder 'otsu' oder 'percentile'
+  value: 0.5            # fester Schwellenwert
+  percentile: 90
+
+gmm:
+  n_components: 2
+  covariance_type: full  # 'full', 'tied', 'diag', 'spherical'
+  fit_strategy: per_image  # wird aktuell nur per Bild genutzt
+  probability_threshold: 0.8   # nur Pixel mit >80 % Zugehörigkeit zum FG-Cluster
+
+morphology:
+  # Pipeline-Optionen: 'standard' oder 'forest'
+  pipeline: standard
+
+  # Parameter für Standard-Pipeline
+  apply_opening: true
+  apply_closing: true
+  opening_size: 3
+  closing_size: 5
+  selem_shape: disk
+
+  # Parameter für Forest-Pipeline
+  closing1_size: 5
+  area_opening_min_size: 100
+  closing2_size: 3
+
+# optional: Ziel-Dateinamen-Vorlage (falls du anderes Schema willst)
+#mask_naming: "{method}_{cls}_{base}_mask.png"

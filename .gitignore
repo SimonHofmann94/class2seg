@@ -5,6 +5,7 @@ data/Severstal/test/ann
 data/Severstal/test/img
 data/Severstal/train/ann
 data/Severstal/train/img
+data/test.py
 
 # Python
 __pycache__/
